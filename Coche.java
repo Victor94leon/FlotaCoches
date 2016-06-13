@@ -1,5 +1,6 @@
-public class Coche extends VehiculoLigero
+public class Coche extends VehiculoLigero implements Seguridad
 {
+    static final int PLAZAS_MAXIMAS = 5;
     /**
      * Constructor de objetos de la clase Coche
      */
@@ -17,5 +18,17 @@ public class Coche extends VehiculoLigero
             periodoDeRevision = 2;
         }
         return periodoDeRevision;
+    }
+    
+    /**
+     * Devuelve true si cumple los requisitos de seguridad y false
+     * en caso contrario
+     */
+    public boolean cumpleSeguridad() {
+        boolean cumpleSeguridad = false;
+        if(getPlazas()<=PLAZAS_MAXIMAS) {
+            cumpleSeguridad = true;
+        }
+        return cumpleSeguridad;
     }
 }
