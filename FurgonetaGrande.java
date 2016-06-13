@@ -7,7 +7,7 @@ public class FurgonetaGrande extends VehiculoPesado
     {
         super(numero,marca,antiguedad,kilometraje,pesoMedio);
     }
-    
+
     /**
      * Devuelve true si es un camión articulado o
      * false en caso contrario
@@ -18,6 +18,17 @@ public class FurgonetaGrande extends VehiculoPesado
             esArticulado = true;
         }
         return esArticulado;
+    }
+
+    /**
+     * Devuelve un array de enteros con los datos del vehículo
+     */
+    public int[] devuelveDatos() {
+        int[] datos = new int[3];
+        datos[0] = getNumero();
+        datos[1] = getAntiguedad();
+        datos [2] = getKilometraje();
+        return datos;
     }
 }
 

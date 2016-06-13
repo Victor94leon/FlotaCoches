@@ -2,7 +2,7 @@ public class Camion extends VehiculoPesado implements Seguridad
 {
     static final float PESO_MAX_ARTICULADO = 3000F;
     static final float PESO_MAX_NO_ARTICULADO = 2000F;
-    
+
     /**
      * Constructor for objects of class Camion
      */
@@ -33,5 +33,16 @@ public class Camion extends VehiculoPesado implements Seguridad
             cumpleSeguridad = true;
         }
         return cumpleSeguridad;
+    }
+
+    /**
+     * Devuelve un array de enteros con los datos del vehículo
+     */
+    public int[] devuelveDatos() {
+        int[] datos = new int[3];
+        datos[0] = getNumero();
+        datos[1] = getAntiguedad();
+        datos [2] = getKilometraje();
+        return datos;
     }
 }

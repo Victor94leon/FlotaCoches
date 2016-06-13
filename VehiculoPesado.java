@@ -1,4 +1,4 @@
-public class VehiculoPesado extends Vehiculo
+public abstract class VehiculoPesado extends Vehiculo
 {
     private float pesoMedio;
 
@@ -17,4 +17,9 @@ public class VehiculoPesado extends Vehiculo
     public float getPesoMedio() {
         return pesoMedio;
     }
+
+    /**
+     * Devuelve un array de enteros con los datos del vehículo
+     */
+    public abstract int[] devuelveDatos();
 }

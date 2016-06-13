@@ -8,8 +8,8 @@ public class FurgonetaPequena extends VehiculoLigero implements Seguridad
     {
         super(numero,marca,antiguedad,kilometraje,plazas);
     }
-    
-        /**
+
+    /**
      * Devuelve true si cumple los requisitos de seguridad y false
      * en caso contrario
      */
@@ -19,5 +19,17 @@ public class FurgonetaPequena extends VehiculoLigero implements Seguridad
             cumpleSeguridad = true;
         }
         return cumpleSeguridad;
+    }
+
+    /**
+     * Devuelve un array de enteros con los datos del vehículo
+     */
+    public int[] devuelveDatos() {
+        int[] datos = new int[4];
+        datos[0] = getNumero();
+        datos[1] = getAntiguedad();
+        datos [2] = getKilometraje();
+        datos [3] = getPlazas();
+        return datos;
     }
 }

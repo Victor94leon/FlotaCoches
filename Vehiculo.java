@@ -1,4 +1,4 @@
-public class Vehiculo
+public abstract class Vehiculo
 {
     private int numero;
     private Marcas marca;
@@ -43,4 +43,9 @@ public class Vehiculo
     public int getKilometraje() {
         return kilometraje;
     }
+    
+    /**
+     * Devuelve un array de enteros con los datos del vehículo
+     */
+    public abstract int[] devuelveDatos();
 }
