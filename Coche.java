@@ -14,7 +14,7 @@ public class Coche extends VehiculoLigero implements Seguridad
      */
     public int revision() {
         int periodoDeRevision = 1;
-        if (getMarca()==Marca.OPEL) {
+        if (getMarca()==Marca.FORD) {
             periodoDeRevision = 2;
         }
         return periodoDeRevision;
@@ -36,11 +36,12 @@ public class Coche extends VehiculoLigero implements Seguridad
      * Devuelve un array de enteros con los datos del vehículo
      */
     public int[] devuelveDatos() {
-        int[] datos = new int[4];
+        int[] datos = new int[5];
         datos[0] = getNumero();
         datos[1] = getAntiguedad();
         datos [2] = getKilometraje();
         datos [3] = getPlazas();
+        datos[4] = revision();
         return datos;
     }
 }

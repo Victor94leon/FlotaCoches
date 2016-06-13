@@ -24,10 +24,11 @@ public class FurgonetaGrande extends VehiculoPesado
      * Devuelve un array de enteros con los datos del vehículo
      */
     public int[] devuelveDatos() {
-        int[] datos = new int[3];
+        int[] datos = new int[4];
         datos[0] = getNumero();
         datos[1] = getAntiguedad();
         datos [2] = getKilometraje();
+        datos[3] = getPesoMedio();
         return datos;
     }
 }
