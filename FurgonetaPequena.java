@@ -4,9 +4,9 @@ public class FurgonetaPequena extends VehiculoLigero implements Seguridad
     /**
      * Constructor for objects of class FurgonetaPequena
      */
-    public FurgonetaPequena(int numero, Marcas marca, int antiguedad, int kilometraje, int plazas)
+    public FurgonetaPequena(Marca marca, int antiguedad, int kilometraje, int plazas)
     {
-        super(numero,marca,antiguedad,kilometraje,plazas);
+        super(marca,antiguedad,kilometraje,plazas);
     }
 
     /**

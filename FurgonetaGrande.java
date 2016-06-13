@@ -3,9 +3,9 @@ public class FurgonetaGrande extends VehiculoPesado
     /**
      * Constructor for objects of class Camion
      */
-    public FurgonetaGrande(int numero, Marcas marca, int antiguedad, int kilometraje, float pesoMedio)
+    public FurgonetaGrande(Marca marca, int antiguedad, int kilometraje, int pesoMedio)
     {
-        super(numero,marca,antiguedad,kilometraje,pesoMedio);
+        super(marca,antiguedad,kilometraje,pesoMedio);
     }
 
     /**
@@ -14,7 +14,7 @@ public class FurgonetaGrande extends VehiculoPesado
      */
     public boolean esArticulado() {
         boolean esArticulado = false;
-        if(getMarca() == Marcas.FIAT || getMarca() == Marcas.FORD) {
+        if(getMarca() == Marca.FIAT || getMarca() == Marca.FORD) {
             esArticulado = true;
         }
         return esArticulado;

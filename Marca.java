@@ -1,4 +1,4 @@
-public enum Marcas
+public enum Marca
 {
     FORD("Ford"),
     OPEL("Opel"),
@@ -7,7 +7,7 @@ public enum Marcas
     
     private String marca;
     
-    private Marcas(String marca) {
+    private Marca(String marca) {
         this.marca = marca;
     }
     

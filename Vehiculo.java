@@ -1,19 +1,19 @@
 public abstract class Vehiculo
 {
     private int numero;
-    private Marcas marca;
+    private Marca marca;
     private int antiguedad;
     private int kilometraje;
     
     /**
      * Constructor de objetos de la clase Vehiculo
      */
-    public Vehiculo(int numero, Marcas marca, int antiguedad, int kilometraje)
+    public Vehiculo(Marca marca, int antiguedad, int kilometraje)
     {
-        this.numero = numero;
         this.marca = marca;
         this.antiguedad = antiguedad;
         this.kilometraje = kilometraje;
+        numero = 0;
     }
     
     /**
@@ -26,7 +26,7 @@ public abstract class Vehiculo
     /**
      * Devuelvela marca del vehículo
      */
-    public Marcas getMarca() {
+    public Marca getMarca() {
         return marca;
     }
     
@@ -48,4 +48,11 @@ public abstract class Vehiculo
      * Devuelve un array de enteros con los datos del vehículo
      */
     public abstract int[] devuelveDatos();
+    
+    /**
+     * Incrementa en 1 el número identificador del coche
+     */
+    public void incrementarNumero(){
+        numero++;
+    }
 }

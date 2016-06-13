@@ -1,20 +1,20 @@
 public abstract class VehiculoPesado extends Vehiculo
 {
-    private float pesoMedio;
+    private int pesoMedio;
 
     /**
      * Constructor de objetos de la clase VehiculoPesado
      */
-    public VehiculoPesado(int numero, Marcas marca, int antiguedad, int kilometraje, float pesoMedio)
+    public VehiculoPesado(Marca marca, int antiguedad, int kilometraje, int pesoMedio)
     {
-        super(numero,marca,antiguedad,kilometraje);
+        super(marca,antiguedad,kilometraje);
         this.pesoMedio = pesoMedio;
     }
 
     /**
      * Devuelve el peso medio del vehículo
      */
-    public float getPesoMedio() {
+    public int getPesoMedio() {
         return pesoMedio;
     }
 

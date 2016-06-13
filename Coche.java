@@ -4,9 +4,9 @@ public class Coche extends VehiculoLigero implements Seguridad
     /**
      * Constructor de objetos de la clase Coche
      */
-    public Coche(int numero, Marcas marca, int antiguedad, int kilometraje, int plazas)
+    public Coche(Marca marca, int antiguedad, int kilometraje, int plazas)
     {
-        super(numero,marca,antiguedad,kilometraje,plazas);
+        super(marca,antiguedad,kilometraje,plazas);
     }
 
     /**
@@ -14,7 +14,7 @@ public class Coche extends VehiculoLigero implements Seguridad
      */
     public int revision() {
         int periodoDeRevision = 1;
-        if (getMarca()==Marcas.OPEL) {
+        if (getMarca()==Marca.OPEL) {
             periodoDeRevision = 2;
         }
         return periodoDeRevision;

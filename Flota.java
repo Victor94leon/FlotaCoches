@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Flota
 {
     private ArrayList<Vehiculo> vehiculos;
+    private int cochesCreados;
 
     /**
      * Constructor de objetos de la clase Flota
@@ -10,13 +11,18 @@ public class Flota
     public Flota()
     {
         vehiculos = new ArrayList<>();
+        cochesCreados = 0;
     }
     
     /**
      * Da de alta un vehiculo
      */
     public void addVehiculo(Vehiculo vehiculo) {
-        vehiculos.add(vehiculo);
+        for(int i = 0; i<cochesCreados; i++) {
+            vehiculo.incrementarNumero();
+        }
+        vehiculos.add(vehiculo);  
+        cochesCreados++;
     }
     
     /**
@@ -37,59 +43,35 @@ public class Flota
     /**
      * Devuelve la marca con mayor número de vehiculos en la flota
      */
-    public Marcas marcaMayoritaria() {
-        Marcas marcaMayoritaria = null;
+    public Marca marcaMayoritaria() {
+        Marca marcaMayoritaria = null;
         if(vehiculos.size()>0) {
             int[] marcas = new int[4];
             for(Vehiculo vehiculoEnLista : vehiculos) {
-                if(vehiculoEnLista.getMarca() == Marcas.FORD) {
+                if(vehiculoEnLista.getMarca() == Marca.FORD) {
                     marcas[0]++;
                 }
-                else if(vehiculoEnLista.getMarca() == Marcas.OPEL) {
+                else if(vehiculoEnLista.getMarca() == Marca.OPEL) {
                     marcas[1]++;
                 }
-                else if(vehiculoEnLista.getMarca() == Marcas.CITROEN) {
+                else if(vehiculoEnLista.getMarca() == Marca.CITROEN) {
                     marcas[2]++;
                 }
-                else if(vehiculoEnLista.getMarca() == Marcas.FIAT) {
+                else if(vehiculoEnLista.getMarca() == Marca.FIAT) {
                     marcas[3]++;
                 }
             }
-            if(marcas[0] > marcas[1] && marcas[0] != marcas[1]) {
-                if (marcas[0] > marcas[2] && marcas[0] != marcas[2]) {
-                    if(marcas[0] > marcas[3] && marcas[0] != marcas[3]) {
-                        marcaMayoritaria = Marcas.FORD;
-                    }
-                    else {
-                        marcaMayoritaria = Marcas.FIAT;
-                    }
-                }
-                else {
-                    if(marcas[2] > marcas[3] && marcas[2] != marcas[3]) {
-                        marcaMayoritaria = Marcas.CITROEN;
-                    }
-                    else {
-                        marcaMayoritaria = Marcas.FIAT;
-                    }
-                }
+            if(marcas[0] > marcas[1] && marcas[0] > marcas[2] && marcas[0] > marcas[3]) {
+                marcaMayoritaria = Marca.FORD;
             }
-            else {
-                if(marcas[1] > marcas[2] && marcas[1] != marcas[2]) {
-                    if(marcas[1] > marcas[3]) {
-                        marcaMayoritaria = Marcas.OPEL;
-                    }
-                    else {
-                        marcaMayoritaria = Marcas.FIAT;
-                    }
-                }
-                else {
-                    if(marcas[2] > marcas[3] && marcas[2] != marcas[3]) {
-                        marcaMayoritaria = Marcas.CITROEN;
-                    }
-                    else {
-                        marcaMayoritaria = Marcas.FIAT;
-                    }
-                }
+            else if(marcas[1] > marcas[0] && marcas[1] > marcas[2] && marcas[1] > marcas[3]) {
+                marcaMayoritaria = Marca.OPEL;
+            }
+            else if(marcas[2] > marcas[0] && marcas[2] > marcas[1] && marcas[2] > marcas[3]) {
+                marcaMayoritaria = Marca.CITROEN;
+            }
+            else if(marcas[3] > marcas[0] && marcas[3] > marcas[1] && marcas[3] > marcas[2]) {
+                marcaMayoritaria = Marca.FIAT;
             }
         }
         return marcaMayoritaria;
@@ -98,7 +80,7 @@ public class Flota
     /**
      * Devuelve verdadero si todos los vehiculos cumplen las medidas de seguridad
      */
-    public boolean cumpleMedidas() {
+    public boolean cumplenMedidas() {
         boolean cumplenMedidas = true;
         if(vehiculos.size()>0) {
             for(int i = 0; i<vehiculos.size() && cumplenMedidas; i++) {
@@ -117,7 +99,7 @@ public class Flota
      * Devuelve un array de enteros con todos los datos del vehiculo buscado
      * por parámetro mediante un id
      */
-    public int[] getDatos(int id) {
+    public int[] getDatosVehiculo(int id) {
         int[] datos = null;
         if(vehiculos.size()>0) {
             boolean cocheEncontrado = false;

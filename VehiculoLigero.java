@@ -5,9 +5,9 @@ public abstract class VehiculoLigero extends Vehiculo
     /**
      * Constructor de objetos de la clase VehiculoLigero
      */
-    public VehiculoLigero(int numero, Marcas marca, int antiguedad, int kilometraje, int plazas)
+    public VehiculoLigero(Marca marca, int antiguedad, int kilometraje, int plazas)
     {
-        super(numero,marca,antiguedad,kilometraje);
+        super(marca,antiguedad,kilometraje);
         this.plazas = plazas;
     }
 
