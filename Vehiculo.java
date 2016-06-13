@@ -1,14 +1,14 @@
 public class Vehiculo
 {
     private int numero;
-    private String marca;
+    private Marcas marca;
     private int antiguedad;
     private int kilometraje;
     
     /**
      * Constructor de objetos de la clase Vehiculo
      */
-    public Vehiculo(int numero, String marca, int antiguedad, int kilometraje)
+    public Vehiculo(int numero, Marcas marca, int antiguedad, int kilometraje)
     {
         this.numero = numero;
         this.marca = marca;
@@ -26,7 +26,7 @@ public class Vehiculo
     /**
      * Devuelvela marca del vehículo
      */
-    public String getMarca() {
+    public Marcas getMarca() {
         return marca;
     }
     

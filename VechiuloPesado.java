@@ -5,7 +5,7 @@ public class VechiuloPesado extends Vehiculo
     /**
      * Constructor de objetos de la clase VehiculoPesado
      */
-    public VechiuloPesado(int numero, String marca, int antiguedad, int kilometraje, float pesoMedio)
+    public VechiuloPesado(int numero, Marcas marca, int antiguedad, int kilometraje, float pesoMedio)
     {
         super(numero,marca,antiguedad,kilometraje);
         this.pesoMedio = pesoMedio;
